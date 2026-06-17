@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Launch Package",
+  "type": "object",
+  "required": ["agent", "outputs", "handoff", "blockers"],
+  "properties": {
+    "agent": { "const": "10-launch" },
+    "outputs": {
+      "type": "object",
+      "required": ["version", "title", "description", "status"],
+      "properties": {
+        "version": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "features": { "type": "array" },
+        "screenshots": { "type": "array" },
+        "release_notes": { "type": "string" },
+        "status": { "const": "ready-to-publish" }
+      }
+    },
+    "handoff": {
+      "type": "object",
+      "properties": {
+        "status": { "const": "COMPLETE" }
+      }
+    },
+    "blockers": { "type": "array" }
+  }
+}
