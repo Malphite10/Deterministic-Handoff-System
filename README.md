@@ -428,7 +428,8 @@ When adding a new agent:
 
 This repository is the single source of truth for all multi-agent workflows. Questions? Check the agent markdown files — they document everything.
 
-Author--https://github.com/Malphite10
+Author-@Malphite10
+https://github.com/Malphite10
 
 ---
 
