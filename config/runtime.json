@@ -1,0 +1,6 @@
+{
+  "execution_mode": "deterministic",
+  "max_retries": 3,
+  "artifact_store": "filesystem",
+  "state_schema": "schemas/state.json"
+}

@@ -1,0 +1,14 @@
+{
+  "00-creative-director": { "primary": "claude-3-5-sonnet", "fallback": "gpt-4o" },
+  "01-research": { "primary": "mistral-large-latest", "fallback": "claude-3-5-sonnet" },
+  "02-product": { "primary": "gpt-4o", "fallback": "claude-3-5-sonnet" },
+  "03-design": { "primary": "claude-3-5-sonnet", "fallback": "gpt-4o" },
+  "04-content": { "primary": "mistral-large-latest", "fallback": "claude-3-5-sonnet" },
+  "05-github-supply-chain": { "primary": "gpt-4o", "fallback": "claude-3-5-sonnet" },
+  "06-builder": { "primary": "claude-3-5-sonnet", "fallback": "gpt-4o" },
+  "07-integration": { "primary": "gpt-4o", "fallback": "claude-3-5-sonnet" },
+  "08-qa": { "primary": "claude-3-5-sonnet", "fallback": "gpt-4o" },
+  "09-email": { "primary": "mistral-large-latest", "fallback": "claude-3-5-sonnet" },
+  "10-launch": { "primary": "gpt-4o", "fallback": "claude-3-5-sonnet" },
+  "11-memory": { "primary": "claude-3-5-sonnet", "fallback": "mistral-large-latest" }
+}

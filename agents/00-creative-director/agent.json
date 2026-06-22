@@ -1,0 +1,8 @@
+{
+  "id": "00-creative-director",
+  "version": "1.0.0",
+  "input_schema": null,
+  "output_schema": "opportunity-report.json",
+  "next": ["01-research"],
+  "retry_limit": 3
+}

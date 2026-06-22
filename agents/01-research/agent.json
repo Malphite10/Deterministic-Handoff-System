@@ -1,0 +1,8 @@
+{
+  "id": "01-research",
+  "version": "1.0.0",
+  "input_schema": "research-package.json",
+  "output_schema": "opportunity-report.json",
+  "next": ["02-product"],
+  "retry_limit": 3
+}

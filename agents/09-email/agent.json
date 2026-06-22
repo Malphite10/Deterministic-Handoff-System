@@ -1,0 +1,5 @@
+{
+  "id": "09-email",
+  "version": "1.0.0",
+  "retry_limit": 3
+}

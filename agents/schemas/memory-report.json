@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Memory Report",
+  "type": "object",
+  "required": ["agent", "outputs", "handoff", "blockers"],
+  "properties": {
+    "agent": { "const": "11-memory" },
+    "outputs": {
+      "type": "object",
+      "properties": {
+        "new_patterns_stored": { "type": "number" },
+        "knowledge_graph_updated": { "type": "boolean" }
+      }
+    },
+    "handoff": {
+      "type": "object",
+      "properties": {
+        "status": { "const": "COMPLETE" }
+      }
+    },
+    "blockers": { "type": "array" }
+  }
+}
