@@ -27,7 +27,34 @@ if (type === 'schemas') {
   });
 
   process.exit(success ? 0 : 1);
+} else if (type === 'handoff') {
+  const handoffPath = args[args.indexOf('--file') + 1];
+  const schemaName = args[args.indexOf('--schema') + 1];
+
+  if (!handoffPath || !schemaName) {
+    console.error('Usage: node scripts/validate.js --type handoff --file <path> --schema <name>');
+    process.exit(1);
+  }
+
+  try {
+    const handoff = JSON.parse(fs.readFileSync(handoffPath, 'utf8'));
+    const schema = JSON.parse(fs.readFileSync(path.join(__dirname, '../agents/schemas', schemaName), 'utf8'));
+
+    const validate = ajv.compile(schema);
+    const valid = validate(handoff);
+
+    if (valid) {
+      console.log(`✓ Handoff valid: ${handoffPath}`);
+      process.exit(0);
+    } else {
+      console.error(`✗ Handoff invalid: ${handoffPath}`, validate.errors);
+      process.exit(1);
+    }
+  } catch (e) {
+    console.error('Validation error:', e.message);
+    process.exit(1);
+  }
 } else {
-  console.log('Validation type not implemented yet.');
+  console.log('Validation type not implemented or recognized.');
   process.exit(0);
 }

@@ -1,0 +1,23 @@
+name: Handoff Validation
+
+on:
+  pull_request:
+    paths:
+      - 'artifacts/current/**'
+      - 'agents/schemas/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: npm install
+      - name: Validate changed handoffs
+        run: |
+          # Logic to identify changed handoffs and validate them against their schemas
+          # For now, we run a generic check if any handoff file is present in a PR
+          echo "Validating handoff packages..."
+          node scripts/validate.js --type schemas

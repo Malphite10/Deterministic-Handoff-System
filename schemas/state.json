@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Global State Schema",
+  "type": "object",
+  "properties": {
+    "project_id": { "type": "string" },
+    "current_stage": { "type": "string" },
+    "completed_stages": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "artifacts": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "errors": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "scores": {
+      "type": "object",
+      "additionalProperties": { "type": "number" }
+    }
+  },
+  "required": ["project_id", "current_stage", "completed_stages", "artifacts", "errors", "scores"]
+}
