@@ -7,6 +7,14 @@
     "typescript@5.3.2",
     "tailwindcss@3.3.0",
     "lucide-react@0.284.0"
+=======
+    "react@",
+    "@shadcn/ui@",
+    "framer-motion@",
+    "next@",
+    "typescript@",
+    "tailwindcss@",
+    "lucide-react@"
   ],
   "github_repositories": [
     "owner/design-system#v1.2.0"
@@ -15,6 +23,8 @@
   "wix_extensions": [],
   "asset_libraries": [
     "https://cdn.jsdelivr.net/npm/icons@1.0.0"
+
+    "https://cdn.jsdelivr.net/npm/icons@"
   ],
   "excluded_forever": [
     "sketchy-lib",
