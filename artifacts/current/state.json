@@ -1,0 +1,76 @@
+{
+  "project_id": "",
+  "current_stage": "10-launch",
+  "completed_stages": [
+    "00-creative-director",
+    "01-research",
+    "02-product",
+    "03-design",
+    "04-content",
+    "05-github-supply-chain",
+    "06-builder",
+    "07-integration",
+    "08-qa",
+    "09-email",
+    "10-launch"
+  ],
+  "artifacts": {
+    "00-creative-director_handoff": {
+      "status": "SUCCESS",
+      "agent": "00-creative-director",
+      "output": "Mock output from 00-creative-director"
+    },
+    "01-research_handoff": {
+      "status": "SUCCESS",
+      "agent": "01-research",
+      "output": "Mock output from 01-research"
+    },
+    "02-product_handoff": {
+      "status": "SUCCESS",
+      "agent": "02-product",
+      "output": "Mock output from 02-product"
+    },
+    "03-design_handoff": {
+      "status": "SUCCESS",
+      "agent": "03-design",
+      "output": "Mock output from 03-design"
+    },
+    "04-content_handoff": {
+      "status": "SUCCESS",
+      "agent": "04-content",
+      "output": "Mock output from 04-content"
+    },
+    "05-github-supply-chain_handoff": {
+      "status": "SUCCESS",
+      "agent": "05-github-supply-chain",
+      "output": "Mock output from 05-github-supply-chain"
+    },
+    "06-builder_handoff": {
+      "status": "SUCCESS",
+      "agent": "06-builder",
+      "output": "Mock output from 06-builder"
+    },
+    "07-integration_handoff": {
+      "status": "SUCCESS",
+      "agent": "07-integration",
+      "output": "Mock output from 07-integration"
+    },
+    "08-qa_handoff": {
+      "status": "SUCCESS",
+      "agent": "08-qa",
+      "output": "Mock output from 08-qa"
+    },
+    "09-email_handoff": {
+      "status": "SUCCESS",
+      "agent": "09-email",
+      "output": "Mock output from 09-email"
+    },
+    "10-launch_handoff": {
+      "status": "SUCCESS",
+      "agent": "10-launch",
+      "output": "Mock output from 10-launch"
+    }
+  },
+  "errors": [],
+  "scores": {}
+}
