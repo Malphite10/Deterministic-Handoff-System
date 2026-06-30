@@ -1,18 +1,27 @@
 {
   "mcpServers": {
-    "my_custom_server": {
-      "command": "node",
-      "args": ["/path/to/server.js", "--port", "8080"],
+    "deterministic-handoff-system": {
+      "type": "stdio",
+      "command": "/root/Deterministic-Handoff-System/mcp/server",
+      "args": [],
       "env": {
-        "API_KEY": "${{ secrets.API_KEY }}",
-        "DEBUG": "true"
-      }
-    },
-    "python_tool_server": {
-      "command": "python3",
-      "args": ["/path/to/tool_server.py"],
-      "env": {
-        "DB_URL": "${{ secrets.DB_URL }}"
+        "VIBE_HOME": "${{ env.VIBE_HOME }}",
+        "ACCESS_TOKEN": "${{ secrets.COPILOT_MCP_SENTRY_ACCESS_TOKEN }}",
+        "API_KEY_ENV": "${{ secrets.API_KEY_ENV }}",
+        "AUTHORIZATION": "${{ secrets.AUTHORIZATION_ }}",
+        "DEBUG": "1",
+        "LOG_LEVEL": "info",
+        "MISTRAL_API_KEY": "${{ secrets.COPILOT_MCP_Mistral_API_KEY }}",
+        "OLLAMA": "openai",
+        "TRANSPORT": "stdio"
+      },
+      "timeout": {
+        "startup": 15,
+        "tool": 120
+      },
+      "permissions": {
+        "tools.fetch_server_get": "always",
+        "tools.deterministic_handoff_query": "ask"
       }
     }
   }
