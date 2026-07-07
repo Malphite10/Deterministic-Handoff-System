@@ -42,18 +42,17 @@ class StateManager:
         with open(self.state_path, 'w') as f:
             json.dump(self.state, f, indent=2)
 
-    def transition_to(self, agent_id: str, next_agent: str = None):
+    def update_stage(self, stage: str):
         entry = {
-            "from": self.state["current_agent"],
-            "to": agent_id,
+            "from": self.state["current_stage"],
+            "to": stage,
             "timestamp": datetime.utcnow().isoformat() + "Z"
         }
         self.state["history"].append(entry)
-        self.state["current_agent"] = agent_id
-        self.state["current_stage"] = agent_id
-        self.state["next_agent"] = next_agent
-        if agent_id not in self.state["completed_stages"] and agent_id != "idle":
-            self.state["completed_stages"].append(agent_id)
+        self.state["current_stage"] = stage
+        self.state["current_agent"] = stage
+        if stage not in self.state["completed_stages"] and stage != "idle":
+            self.state["completed_stages"].append(stage)
         self.save_state()
 
     def update_status(self, status: str):
