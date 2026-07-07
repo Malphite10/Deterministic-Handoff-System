@@ -8,41 +8,25 @@ class AgentExecutor:
 
     def execute(self, agent_id: str, input_data: Dict[str, Any], agent_info: Dict[str, Any]) -> Dict[str, Any]:
         print(f"[{'DRY-RUN' if self.dry_run else 'EXEC'}] Agent: {agent_id}")
-
-        next_agent = agent_info.get("next")[0] if agent_info.get("next") else None
-        self.state_manager.transition_to(agent_id, next_agent)
+        self.state_manager.update_stage(agent_id)
 
         if self.dry_run:
             time.sleep(0.1)
-            handoff = {"status": "SUCCESS", "mode": "dry-run"}
+            handoff = {
+                "status": "SUCCESS",
+                "mode": "dry-run",
+                "agent": agent_id,
+                "timestamp": time.time()
+            }
         else:
             # Simulate real execution
             handoff = {
                 "status": "SUCCESS",
                 "agent": agent_id,
                 "output_schema": agent_info.get("output_schema"),
+                "output": f"Mock output from {agent_id}",
                 "timestamp": time.time()
             }
-
-import subprocess
-import os
-from typing import Dict, Any
-
-class AgentExecutor:
-    def __init__(self, state_manager):
-        self.state_manager = state_manager
-
-    def execute(self, agent_id: str, input_data: Dict[str, Any]) -> Dict[str, Any]:
-        print(f"Executing agent: {agent_id}")
-        self.state_manager.update_stage(agent_id)
-
-        # In a real system, this would call the agent's logic.
-        # For now, we simulate success and return a mock handoff.
-        handoff = {
-            "status": "SUCCESS",
-            "agent": agent_id,
-            "output": f"Mock output from {agent_id}"
-        }
 
         self.state_manager.add_artifact(f"{agent_id}_handoff", handoff)
         return handoff

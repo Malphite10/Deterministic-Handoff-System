@@ -9,12 +9,12 @@ def test_state_initialization(tmp_path):
     assert manager.state["status"] == "INITIALIZED"
     assert manager.state["project_id"] == "default"
 
-def test_state_transition(tmp_path):
+def test_state_stage_update(tmp_path):
     state_file = tmp_path / "state.json"
     manager = StateManager(state_path=str(state_file))
-    manager.transition_to("00-creative-director", next_agent="01-research")
+    manager.update_stage("00-creative-director")
+    assert manager.state["current_stage"] == "00-creative-director"
     assert manager.state["current_agent"] == "00-creative-director"
-    assert manager.state["next_agent"] == "01-research"
     assert len(manager.state["history"]) == 1
     assert manager.state["history"][0]["to"] == "00-creative-director"
 
