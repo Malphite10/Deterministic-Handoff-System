@@ -1,0 +1,4 @@
+# add to .gitignore
+echo ".env" >> .gitignore
+git rm --cached .env
+git commit -m "chore: stop tracking .env, keep .env.example only"
