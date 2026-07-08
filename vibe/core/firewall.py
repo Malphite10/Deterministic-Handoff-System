@@ -2,6 +2,7 @@ import fnmatch
 import json
 import os
 
+
 class Firewall:
     def __init__(self, policy_path="config/network-policy.json"):
         self.policy_path = policy_path
@@ -41,8 +42,10 @@ class Firewall:
 
         return False
 
+
 class MCPIsolation:
     """Each MCP server has its own network allowlist."""
+
     def __init__(self, mcp_config_path="mcp-server/mcp.json"):
         self.mcp_config_path = mcp_config_path
         self.servers = {}

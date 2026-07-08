@@ -2,34 +2,72 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Launch Package",
   "type": "object",
-  "required": ["agent", "inputs", "outputs", "handoff", "blockers"],
+  "required": [
+    "agent",
+    "inputs",
+    "outputs",
+    "handoff",
+    "blockers",
+    "version",
+    "timestamp",
+    "tasks"
+  ],
   "properties": {
-    "agent": { "const": "10-launch" },
+    "agent": {
+      "const": "10-launch"
+    },
     "inputs": {
       "type": "object",
-      "required": ["qa_sign_off", "email_campaign"],
+      "required": [
+        "qa_sign_off",
+        "email_campaign"
+      ],
       "properties": {
-        "qa_sign_off": { "type": "object" },
-        "email_campaign": { "type": "object" }
+        "qa_sign_off": {
+          "type": "object"
+        },
+        "email_campaign": {
+          "type": "object"
+        }
       }
     },
     "outputs": {
       "type": "object",
-      "required": ["live_url", "seo_metadata", "og_tags", "release_notes"],
+      "required": [
+        "live_url",
+        "seo_metadata",
+        "og_tags",
+        "release_notes"
+      ],
       "properties": {
-        "live_url": { "type": "string", "format": "uri" },
-        "seo_metadata": { "type": "object" },
-        "og_tags": { "type": "object" },
-        "release_notes": { "type": "string" }
+        "live_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "seo_metadata": {
+          "type": "object"
+        },
+        "og_tags": {
+          "type": "object"
+        },
+        "release_notes": {
+          "type": "string"
+        }
       }
     },
     "handoff": {
       "type": "object",
-      "required": ["status"],
+      "required": [
+        "status"
+      ],
       "properties": {
-        "status": { "const": "COMPLETE" }
+        "status": {
+          "const": "COMPLETE"
+        }
       }
     },
-    "blockers": { "type": "array" }
+    "blockers": {
+      "type": "array"
+    }
   }
 }

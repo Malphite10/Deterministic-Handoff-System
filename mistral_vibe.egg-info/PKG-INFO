@@ -7,3 +7,4 @@ Requires-Dist: httpx
 Requires-Dist: pydantic
 Requires-Dist: python-dotenv
 Requires-Dist: pytest
+Requires-Dist: jsonschema>=4.26.0

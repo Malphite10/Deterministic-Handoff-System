@@ -2,6 +2,7 @@ import json
 import os
 from typing import Dict, Any, Optional, List
 
+
 class AgentRegistry:
     def __init__(self, registry_path: str = "agents/registry.json"):
         self.registry_path = registry_path
@@ -9,7 +10,7 @@ class AgentRegistry:
 
     def _load_registry(self) -> Dict[str, Any]:
         if os.path.exists(self.registry_path):
-            with open(self.registry_path, 'r') as f:
+            with open(self.registry_path, "r") as f:
                 return json.load(f)
         return {}
 

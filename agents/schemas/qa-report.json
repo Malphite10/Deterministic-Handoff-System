@@ -2,27 +2,60 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "QA Report",
   "type": "object",
-  "required": ["agent", "outputs", "handoff", "blockers"],
+  "required": [
+    "agent",
+    "outputs",
+    "handoff",
+    "blockers",
+    "version",
+    "timestamp",
+    "inputs",
+    "tasks"
+  ],
   "properties": {
-    "agent": { "const": "08-qa" },
+    "agent": {
+      "const": "08-qa"
+    },
     "outputs": {
       "type": "object",
-      "required": ["status", "score"],
+      "required": [
+        "status",
+        "score"
+      ],
       "properties": {
-        "status": { "enum": ["approved", "rejected"] },
-        "critical_issues": { "type": "array" },
-        "warnings": { "type": "array" },
-        "passed_tests": { "type": "array" },
-        "score": { "type": "number" }
+        "status": {
+          "enum": [
+            "approved",
+            "rejected"
+          ]
+        },
+        "critical_issues": {
+          "type": "array"
+        },
+        "warnings": {
+          "type": "array"
+        },
+        "passed_tests": {
+          "type": "array"
+        },
+        "score": {
+          "type": "number"
+        }
       }
     },
     "handoff": {
       "type": "object",
-      "required": ["next_agent"],
+      "required": [
+        "next_agent"
+      ],
       "properties": {
-        "next_agent": { "const": "10-launch" }
+        "next_agent": {
+          "const": "09-email"
+        }
       }
     },
-    "blockers": { "type": "array" }
+    "blockers": {
+      "type": "array"
+    }
   }
 }

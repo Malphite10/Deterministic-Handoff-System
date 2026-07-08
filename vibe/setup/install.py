@@ -1,6 +1,5 @@
-import os
 import subprocess
-import sys
+
 
 def run_command(command):
     print(f"Running: {' '.join(command)}")
@@ -10,6 +9,7 @@ def run_command(command):
         return False
     print(result.stdout)
     return True
+
 
 def setup():
     print("Setting up Mistral Vibe...")
@@ -29,6 +29,7 @@ def setup():
         return
 
     print("Mistral Vibe setup complete.")
+
 
 if __name__ == "__main__":
     setup()

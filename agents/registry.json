@@ -11,15 +11,15 @@
     "id": "01-research",
     "skill": "agents/01-research/skill.md",
     "agent": "agents/01-research/agent.md",
-    "input_schema": "research-package.json",
-    "output_schema": "opportunity-report.json",
+    "input_schema": "opportunity-report.json",
+    "output_schema": "research-package.json",
     "next": ["02-product"]
   },
   "02-product": {
     "id": "02-product",
     "skill": "agents/02-product/skill.md",
     "agent": "agents/02-product/agent.md",
-    "input_schema": "opportunity-report.json",
+    "input_schema": "research-package.json",
     "output_schema": "product-spec.json",
     "next": ["03-design"]
   },

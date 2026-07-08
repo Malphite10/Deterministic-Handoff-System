@@ -7,7 +7,10 @@
     "inputs",
     "outputs",
     "handoff",
-    "blockers"
+    "blockers",
+    "version",
+    "timestamp",
+    "tasks"
   ],
   "properties": {
     "agent": {
@@ -74,7 +77,7 @@
       ],
       "properties": {
         "next_agent": {
-          "const": "05-github-supply-chain"
+          "const": "04-content"
         },
         "design_system_compliance": {
           "type": "boolean"
