@@ -2,3 +2,4 @@ httpx
 pydantic
 python-dotenv
 pytest
+jsonschema>=4.26.0

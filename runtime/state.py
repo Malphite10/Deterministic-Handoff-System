@@ -2,7 +2,8 @@ import json
 import os
 from datetime import datetime
 import uuid
-from typing import Dict, List, Any
+from typing import Dict, Any
+
 
 class StateManager:
     def __init__(self, state_path: str = "artifacts/current/state.json"):
@@ -11,7 +12,7 @@ class StateManager:
 
     def _load_state(self) -> Dict[str, Any]:
         if os.path.exists(self.state_path):
-            with open(self.state_path, 'r') as f:
+            with open(self.state_path, "r") as f:
                 try:
                     return json.load(f)
                 except json.JSONDecodeError:
@@ -33,20 +34,20 @@ class StateManager:
             "errors": [],
             "scores": {},
             "metrics": {},
-            "history": []
+            "history": [],
         }
 
     def save_state(self):
         self.state["updated_at"] = datetime.utcnow().isoformat() + "Z"
         os.makedirs(os.path.dirname(self.state_path), exist_ok=True)
-        with open(self.state_path, 'w') as f:
+        with open(self.state_path, "w") as f:
             json.dump(self.state, f, indent=2)
 
     def update_stage(self, stage: str):
         entry = {
             "from": self.state["current_stage"],
             "to": stage,
-            "timestamp": datetime.utcnow().isoformat() + "Z"
+            "timestamp": datetime.utcnow().isoformat() + "Z",
         }
         self.state["history"].append(entry)
         self.state["current_stage"] = stage

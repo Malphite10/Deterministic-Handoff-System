@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Integration Package",
+  "type": "object",
+  "required": ["agent", "version", "timestamp", "inputs", "tasks", "outputs", "handoff", "blockers"],
+  "properties": {
+    "agent": { "const": "07-integration" },
+    "version": { "type": "string" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "inputs": { "type": "object" },
+    "tasks": { "type": "array" },
+    "outputs": {
+      "type": "object",
+      "required": ["integration_status"],
+      "properties": {
+        "integration_status": { "type": "string" }
+      }
+    },
+    "handoff": { "type": "object" },
+    "blockers": { "type": "array" }
+  }
+}

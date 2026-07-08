@@ -1,13 +1,12 @@
-import pytest
-import os
-import json
 from runtime.state import StateManager
+
 
 def test_state_initialization(tmp_path):
     state_file = tmp_path / "state.json"
     manager = StateManager(state_path=str(state_file))
     assert manager.state["status"] == "INITIALIZED"
     assert manager.state["project_id"] == "default"
+
 
 def test_state_stage_update(tmp_path):
     state_file = tmp_path / "state.json"
@@ -17,6 +16,7 @@ def test_state_stage_update(tmp_path):
     assert manager.state["current_agent"] == "00-creative-director"
     assert len(manager.state["history"]) == 1
     assert manager.state["history"][0]["to"] == "00-creative-director"
+
 
 def test_add_artifact(tmp_path):
     state_file = tmp_path / "state.json"
