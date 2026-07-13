@@ -8,9 +8,9 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
-  id-token: write
-
+  contents: read
+  id-token: none
+  
 jobs:
   validate-schemas:
     runs-on: ubuntu-latest
@@ -33,7 +33,7 @@ jobs:
           python-version: '3.12'
       - run: pip install pytest
       - name: Run Tests
-        run: PYTHONPATH=. python3 -m pytest tests/
+        run: PYTHONPATH=self. python3 -m pytest tests/
 
   supply-chain-gate:
     needs: runtime-tests
@@ -45,6 +45,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
+
+      
           node-version: '22'
 
       - name: 1. Dependency Review & License Scan
@@ -54,12 +56,11 @@ jobs:
           # Mock license scan
           echo '{"status": "PASSED", "licenses": ["MIT", "Apache-2.0"]}' > artifacts/security/license-report.json
           echo "License scan passed."
-
+      
       - name: 2. Security Scan
         run: |
           npm audit --audit-level=high || true
           echo '{"vulnerabilities": 0}' > artifacts/security/dependency-report.json
-
       - name: 3. SBOM Generation (CycloneDX)
         run: |
           echo "Generating CycloneDX SBOM..."
@@ -84,3 +85,8 @@ jobs:
         if: failure()
         run: |
           echo "Supply chain validation BLOCKED."
+          var express = require('express');
+          var app = express();
+          // ...
+             app.get('/full-profile/:userId', function(req, res) { if (req.cookies.loggedInUserId !== req.params.userId) {
+         // BAD: login decision made based on user controlled dat requireLogin();} else {   // ... show private information  }
