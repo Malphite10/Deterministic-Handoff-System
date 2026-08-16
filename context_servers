@@ -1,0 +1,18 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "open-design": {
+      "type": "local",
+      "command": [
+        "P:\\Mal-k\\Open Design\\Open Design.exe",
+        "P:\\Mal-k\\Open Design\\resources\\app\\prebundled\\daemon\\daemon-cli.mjs",
+        "mcp"
+      ],
+      "environment": {
+        "OD_DATA_DIR": "C:\\Users\\Mal-k\\AppData\\Roaming\\Open Design\\namespaces\\release-stable-win\\data",
+        "OD_SIDECAR_IPC_PATH": "\\\\.\\pipe\\open-design-release-stable-win-daemon",
+        "ELECTRON_RUN_AS_NODE": "1"
+      }
+    }
+  }
+}
