@@ -9,7 +9,7 @@
         "mcp"
       ],
       "environment": {
-        "OD_DATA_DIR": "C:\\Users\\Mal-k\\AppData\\Roaming\\Open Design\\namespaces\\release-stable-win\\data",
+        "OD_DATA_DIR": 
         "OD_SIDECAR_IPC_PATH": "\\\\.\\pipe\\open-design-release-stable-win-daemon",
         "ELECTRON_RUN_AS_NODE": "1"
       }
